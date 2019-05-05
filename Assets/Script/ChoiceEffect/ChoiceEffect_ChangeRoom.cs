@@ -5,12 +5,12 @@ using UnityEngine;
 namespace Knight
 {
     public class ChoiceEffect_ChangeRoom : ChoiceEffect {
-        public Room R;
+        public string RoomKey;
+        public int EntranceIndex;
 
         public override void Effect()
         {
             base.Effect();
-            OutlinersControl.Main.ChangeRoom(R);
         }
     }
 }

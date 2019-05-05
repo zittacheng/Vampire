@@ -11,6 +11,10 @@ namespace Knight
         public Animator Anim;
         public TextMeshProUGUI MainText;
         public Conversation CCV;
+        [Space]
+        public GameObject StandardBase;
+        public GameObject SingleBase;
+        public GameObject DoubleBase;
 
         // Start is called before the first frame update
         void Start()
@@ -22,9 +26,36 @@ namespace Knight
         void Update()
         {
             if (!CCV)
+            {
                 MainText.text = "";
+
+                StandardBase.SetActive(true);
+                SingleBase.SetActive(false);
+                DoubleBase.SetActive(false);
+            }
             else
+            {
                 MainText.text = CCV.GetContent();
+
+                if (CCV.ActiveChoices.Count == 2)
+                {
+                    DoubleBase.SetActive(true);
+                    SingleBase.SetActive(false);
+                    StandardBase.SetActive(false);
+                }
+                else if (CCV.ActiveChoices.Count == 1)
+                {
+                    DoubleBase.SetActive(false);
+                    SingleBase.SetActive(true);
+                    StandardBase.SetActive(false);
+                }
+                else
+                {
+                    StandardBase.SetActive(true);
+                    SingleBase.SetActive(false);
+                    DoubleBase.SetActive(false);
+                }
+            }
         }
 
         public void ActivateConversation(Conversation CV)

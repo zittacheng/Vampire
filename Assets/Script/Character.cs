@@ -402,12 +402,6 @@ namespace Knight
             else
                 return true;
         }
-
-        private void Notes()
-        {
-            //操纵方法: SetInputSpeed(), 1到-1
-            //可能暂时用不到Jump Dodge之类的东西
-        }
     }
 
     public enum Direction

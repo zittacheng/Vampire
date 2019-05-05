@@ -23,7 +23,7 @@ namespace Knight
         {
             if (CanInput && CurrentArea)
             {
-                if (!Room.Current || CurrentArea != Room.Current.inputArea)
+                if (!Room.Current)
                     Deactivate();
             }
         }
@@ -38,12 +38,12 @@ namespace Knight
         {
             if (Room.Current)
             {
-                if (C2D.GetComponent<InputArea>() && Room.Current.inputArea == C2D.GetComponent<InputArea>())
+                if (C2D.GetComponent<InputArea>())
                 {
                     CanInput = true;
                     CurrentArea = C2D.GetComponent<InputArea>();
                 }
-                if (C2D.GetComponent<InterObject>() && Room.Current.InterObjects.Contains(C2D.GetComponent<InterObject>()))
+                if (C2D.GetComponent<InterObject>())
                 {
                     InterObject IO = C2D.GetComponent<InterObject>();
                     if (!InterObjects.Contains(IO))

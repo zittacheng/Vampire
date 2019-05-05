@@ -8,6 +8,8 @@ namespace Knight
         [HideInInspector]
         public static OutlinersControl Main;
         public Room CurrentRoom;
+        public string CurrentSceneName;
+        public Animator FadeOutAnim;
 
         public void Awake()
         {
@@ -26,12 +28,21 @@ namespace Knight
 
         }
 
-        public void ChangeRoom(Room R)
+        public void SetRoom(Room R)
         {
             CurrentRoom = R;
-            //Temp
-            Camera.main.transform.position = new Vector3(R.CameraPoint.transform.position.x, R.CameraPoint.transform.position.y,
-                Camera.main.transform.position.z);
+        }
+
+        public void ChangeLevel()
+        {
+            StartCoroutine("ChangeLevelIE");
+        }
+
+        public IEnumerator ChangeLevelIE()
+        {
+            FadeOutAnim.SetBool("Play", true);
+            yield return new WaitForSeconds(0.5f);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(CurrentSceneName);
         }
     }
 }
