@@ -9,6 +9,8 @@ namespace Knight
         public string AnimKey;
         public string CharacterAnimKey;
         public bool CanDisrupt = true;
+        public bool NormalChoice = true;
+        public bool GhostChoice;
         public List<ChoiceEffect> Effects;
         public List<Condition> Conditions;
 
@@ -45,6 +47,10 @@ namespace Knight
             foreach (Condition C in Conditions)
                 if (!C.Active())
                     return false;
+            if (!GhostChoice && Character.Main.GhostForm)
+                return false;
+            if (!NormalChoice && !Character.Main.GhostForm)
+                return false;
             return true;
         }
     }

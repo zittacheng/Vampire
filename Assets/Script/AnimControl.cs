@@ -182,6 +182,11 @@ namespace Knight
             SetBoolAnim("StopInterObject");
         }
 
+        public void StartKill()
+        {
+            SetBoolAnim("Kill");
+        }
+
         public void SetBoolAnim(string Key)
         {
             StartCoroutine(SetBoolAnimIE(Key));

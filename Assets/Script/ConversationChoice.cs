@@ -6,6 +6,8 @@ namespace Knight
 {
     public class ConversationChoice : MonoBehaviour {
         public string Content;
+        public Conversation NextConversation;
+        public bool EndConversation;
         public List<ChoiceEffect> Effects;
         public List<Condition> Conditions;
 
@@ -25,6 +27,13 @@ namespace Knight
         {
             foreach (ChoiceEffect E in Effects)
                 ExeEffect(E);
+            if (NextConversation)
+                ConversationControl.Main.ActivateConversation(NextConversation);
+            else if (EndConversation)
+            {
+                ConversationControl.Main.DisableConversaction();
+                Character.Main.DisruptInterObject();
+            }
         }
 
         public void ExeEffect(ChoiceEffect E)

@@ -6,6 +6,7 @@ namespace Knight
 {
     public class RoomEntrance : MonoBehaviour {
         public GameObject CharacterPoint;
+        public Direction direction = Direction.Right;
 
         // Start is called before the first frame update
         void Start()

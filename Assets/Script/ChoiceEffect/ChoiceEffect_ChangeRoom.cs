@@ -11,6 +11,9 @@ namespace Knight
         public override void Effect()
         {
             base.Effect();
+            SaveControl.SetString("Room", RoomKey);
+            SaveControl.SetInt("Entrance", EntranceIndex);
+            OutlinersControl.Main.ChangeLevel();
         }
     }
 }

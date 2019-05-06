@@ -84,6 +84,7 @@
     <Compile Include="Assets\Script\ChoiceRenderer.cs" />
     <Compile Include="Assets\Script\ChoicesPanel.cs" />
     <Compile Include="Assets\Script\Condition\Condition.cs" />
+    <Compile Include="Assets\Script\Condition\Condition_Ghost.cs" />
     <Compile Include="Assets\Script\Condition\Condition_Key.cs" />
     <Compile Include="Assets\Script\Conversation.cs" />
     <Compile Include="Assets\Script\ConversationChoice.cs" />
@@ -103,7 +104,9 @@
     <Compile Include="Assets\Script\Legacy\ZoneEffect_CheckPoint.cs" />
     <Compile Include="Assets\Script\Legacy\ZoneEffect_Kill.cs" />
     <Compile Include="Assets\Script\Level.cs" />
+    <Compile Include="Assets\Script\NPC.cs" />
     <Compile Include="Assets\Script\OutlinersControl.cs" />
+    <Compile Include="Assets\Script\PresetIOState.cs" />
     <Compile Include="Assets\Script\Room.cs" />
     <Compile Include="Assets\Script\RoomEntrance.cs" />
     <Compile Include="Assets\Script\SaveControl.cs" />

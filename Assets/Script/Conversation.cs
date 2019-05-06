@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Knight
 {
     public class Conversation : MonoBehaviour {
+        [TextArea]
         public string Content;
         public ConversationChoice DefaultChoice;
         public List<ConversationChoice> Choices;

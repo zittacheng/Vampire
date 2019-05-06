@@ -11,6 +11,9 @@ namespace Knight
         public Animator Anim;
         public TextMeshProUGUI MainText;
         public Conversation CCV;
+        public bool AnimRender;
+        public float RenderDelay;
+        public bool ChoiceActive;
         [Space]
         public GameObject StandardBase;
         public GameObject SingleBase;
@@ -26,17 +29,16 @@ namespace Knight
         void Update()
         {
             if (!CCV)
-            {
                 MainText.text = "";
 
-                StandardBase.SetActive(true);
+            if (!CCV || !ChoiceActive)
+            {
+                StandardBase.SetActive(false);
                 SingleBase.SetActive(false);
                 DoubleBase.SetActive(false);
             }
             else
             {
-                MainText.text = CCV.GetContent();
-
                 if (CCV.ActiveChoices.Count == 2)
                 {
                     DoubleBase.SetActive(true);
@@ -62,12 +64,38 @@ namespace Knight
         {
             CCV = CV;
             CV.OnActive();
+            if (AnimRender)
+            {
+                ChoiceActive = false;
+                StartCoroutine("RenderProcess");
+            }
+            else
+            {
+                ChoiceActive = true;
+                MainText.text = CV.GetContent();
+            }
             Anim.SetBool("Active", true);
+        }
+
+        public IEnumerator RenderProcess()
+        {
+            int i = 0;
+            string a = "";
+            MainText.text = a;
+            while (i < CCV.GetContent().Length)
+            {
+                yield return new WaitForSeconds(RenderDelay);
+                a += CCV.GetContent()[i];
+                MainText.text = a;
+                i++;
+            }
+            ChoiceActive = true;
         }
 
         public void DisableConversaction()
         {
             CCV = null;
+            ChoiceActive = false;
             Anim.SetBool("Active", false);
         }
 

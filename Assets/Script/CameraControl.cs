@@ -20,10 +20,10 @@ namespace Knight
             float y = Character.Main.transform.position.y + CDifference.y;
             if (Room.Current)
             {
-                if (x > Room.Current.CameraLimitX.y)
-                    x = Room.Current.CameraLimitX.y;
-                if (x < Room.Current.CameraLimitX.x)
-                    x = Room.Current.CameraLimitX.x;
+                if (x > Room.Current.GetCameraLimit().y)
+                    x = Room.Current.GetCameraLimit().y;
+                if (x < Room.Current.GetCameraLimit().x)
+                    x = Room.Current.GetCameraLimit().x;
             }
             transform.position = new Vector3(x, y, transform.position.z);
         }

@@ -48,7 +48,7 @@ namespace Knight
 
         public void OnMouseDown()
         {
-            if (CVC)
+            if (CVC && ConversationControl.Main.ChoiceActive)
                 CVC.Effect();
         }
     }

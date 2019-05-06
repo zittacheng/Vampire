@@ -42,6 +42,7 @@ namespace Knight
         [Space]
         public bool GhostForm;
         public float GhostFormSpeed;
+        public float KillDelay;
         [Space]
         public List<Collider2D> C2Ds;
         public List<MovingPlatform> MPs;
@@ -257,6 +258,23 @@ namespace Knight
             InputDirection(DelayProcessDirection);
             ActivateInterObject(TargetInterObject);
             DelayProcessing = false;
+        }
+
+        public void StartKill()
+        {
+            StartCoroutine("KillProcess");
+            AC.StartKill();
+        }
+
+        public IEnumerator KillProcess()
+        {
+            yield return new WaitForSeconds(KillDelay);
+            FinishKill();
+        }
+
+        public void FinishKill()
+        {
+            DisruptInterObject();
         }
 
         public void AttackInput(int Index)
