@@ -210,7 +210,9 @@ namespace Knight
             if (TargetInterObject)
             {
                 DelayProcessDirection = TargetInterObject.GetInterDirection();
-                StartCoroutine("IODelayAnim");
+                //StartCoroutine("IODelayAnim");
+                InputDirection(DelayProcessDirection);
+                ActivateInterObject(TargetInterObject);
             }
         }
 

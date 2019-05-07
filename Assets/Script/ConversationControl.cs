@@ -75,6 +75,7 @@ namespace Knight
                 MainText.text = CV.GetContent();
             }
             Anim.SetBool("Active", true);
+            Update();
         }
 
         public IEnumerator RenderProcess()

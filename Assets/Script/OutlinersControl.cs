@@ -44,5 +44,17 @@ namespace Knight
             yield return new WaitForSeconds(0.5f);
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(CurrentSceneName);
         }
+
+        public void ChangeScene(string Key)
+        {
+            StartCoroutine(ChangeSceneIE(Key));
+        }
+
+        public IEnumerator ChangeSceneIE(string Key)
+        {
+            FadeOutAnim.SetBool("Play", true);
+            yield return new WaitForSeconds(0.5f);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(Key);
+        }
     }
 }

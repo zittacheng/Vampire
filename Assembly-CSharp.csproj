@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_ChangeKey.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_ChangeRoom.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_ChangeRoom_Legacy.cs" />
+    <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_ChangeScene.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_ClueAnim.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_Conversation.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_DisruptInterObject.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_SetCameraPosition.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_SetCharacterPosition.cs" />
     <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_SetKey.cs" />
+    <Compile Include="Assets\Script\ChoiceEffect\ChoiceEffect_TriggerAnim.cs" />
     <Compile Include="Assets\Script\ChoiceRenderer.cs" />
     <Compile Include="Assets\Script\ChoicesPanel.cs" />
     <Compile Include="Assets\Script\Condition\Condition.cs" />
@@ -89,10 +91,12 @@
     <Compile Include="Assets\Script\Conversation.cs" />
     <Compile Include="Assets\Script\ConversationChoice.cs" />
     <Compile Include="Assets\Script\ConversationControl.cs" />
+    <Compile Include="Assets\Script\DestroyIOState.cs" />
     <Compile Include="Assets\Script\GhostControl.cs" />
     <Compile Include="Assets\Script\InputArea.cs" />
     <Compile Include="Assets\Script\InputCursor.cs" />
     <Compile Include="Assets\Script\InterObject.cs" />
+    <Compile Include="Assets\Script\KeyRenderer.cs" />
     <Compile Include="Assets\Script\Legacy\CameraMovement.cs" />
     <Compile Include="Assets\Script\Legacy\CharacterControl_Legacy.cs" />
     <Compile Include="Assets\Script\Legacy\CheckPoint.cs" />
@@ -107,6 +111,11 @@
     <Compile Include="Assets\Script\NPC.cs" />
     <Compile Include="Assets\Script\OutlinersControl.cs" />
     <Compile Include="Assets\Script\PresetIOState.cs" />
+    <Compile Include="Assets\Script\Puzzle\PuzzleButton.cs" />
+    <Compile Include="Assets\Script\Puzzle\PuzzleCoin.cs" />
+    <Compile Include="Assets\Script\Puzzle\PuzzleControl.cs" />
+    <Compile Include="Assets\Script\Puzzle\PuzzleExit.cs" />
+    <Compile Include="Assets\Script\Puzzle\PuzzleHandle.cs" />
     <Compile Include="Assets\Script\Room.cs" />
     <Compile Include="Assets\Script\RoomEntrance.cs" />
     <Compile Include="Assets\Script\SaveControl.cs" />

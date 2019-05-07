@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 3051d44856410bc4da7db65d46aab1e5
+  - enabled: 1
+    path: Assets/Scenes/Puzzle.unity
+    guid: d0035091cabb40344a1847e8d538016a
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 51d4214b08652524aa57313f32822aba
   m_configObjects: {}

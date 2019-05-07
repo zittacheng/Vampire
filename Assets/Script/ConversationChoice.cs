@@ -27,12 +27,14 @@ namespace Knight
         {
             foreach (ChoiceEffect E in Effects)
                 ExeEffect(E);
-            if (NextConversation)
-                ConversationControl.Main.ActivateConversation(NextConversation);
-            else if (EndConversation)
+            if (EndConversation)
             {
                 ConversationControl.Main.DisableConversaction();
                 Character.Main.DisruptInterObject();
+            }
+            else if (NextConversation)
+            {
+                ConversationControl.Main.ActivateConversation(NextConversation);
             }
         }
 
