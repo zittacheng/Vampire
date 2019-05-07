@@ -8,9 +8,10 @@ namespace Knight
         public string KillKey;
         public Animator Anim;
         public GameObject AnimBase;
+        public GameObject TargetPoint;
         public Collider2D C2D;
         public InterObject KillIO;
-        public float KillDelay;
+        public float KillDelay = 0.2f;
 
         public void Awake()
         {
@@ -36,11 +37,15 @@ namespace Knight
 
         public void Kill()
         {
+            /*
+            Anim.SetBool("Kill", true);
+            Destroy(gameObject, 10);*/
+
             C2D.enabled = false;
             SaveControl.SetInt(KillKey, 1);
             Character.Main.StartKill();
-            Anim.SetBool("Kill", true);
-            Destroy(gameObject, 10);
+            OutlinersControl.Main.CreateKillEffect(TargetPoint.transform.position);
+            Destroy(gameObject, KillDelay);
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Knight
         public InputArea CurrentArea;
         public List<InterObject> InterObjects;
         public List<ChoiceRenderer> CRs;
+        public NPC SelectingNPC;
 
         // Start is called before the first frame update
         void Start()
@@ -55,6 +56,10 @@ namespace Knight
                     if (!CRs.Contains(CR))
                         CRs.Add(CR);
                 }
+                if (C2D.GetComponent<NPC>())
+                {
+                    SelectingNPC = C2D.GetComponent<NPC>();
+                }
             }
         }
 
@@ -75,6 +80,10 @@ namespace Knight
                 ChoiceRenderer CR = C2D.GetComponent<ChoiceRenderer>();
                 if (CRs.Contains(CR))
                     CRs.Remove(CR);
+            }
+            if (C2D.GetComponent<NPC>() && SelectingNPC == C2D.GetComponent<NPC>())
+            {
+                SelectingNPC = null;
             }
         }
 

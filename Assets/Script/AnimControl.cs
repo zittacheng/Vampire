@@ -25,6 +25,11 @@ namespace Knight
         public bool CanFall;
         public bool CanBacked;
 
+        public void Awake()
+        {
+            Anim.SetBool("GhostForm", Character.Main.GhostForm);
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -39,6 +44,7 @@ namespace Knight
             XUpdate();
             YUpdate();
             QueuedAttackUpdate();
+            Anim.SetBool("GhostForm", Character.Main.GhostForm);
         }
 
         public void InputUpdate()
@@ -207,11 +213,6 @@ namespace Knight
         public void SetIntAnim(string Key, int Value)
         {
             Anim.SetInteger(Key, Value);
-        }
-
-        private void Notes()
-        {
-            //只能通过Character类调用哦
         }
     }
 }

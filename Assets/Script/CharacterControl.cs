@@ -21,7 +21,9 @@ namespace Knight
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (InputCursor.Main.GetSelectingInterObject())
+                if (InputCursor.Main.SelectingNPC && OutlinersControl.Main.KillProtectTime <= 0 && C.GhostForm)
+                    InputCursor.Main.SelectingNPC.Kill();
+                else if (InputCursor.Main.GetSelectingInterObject())
                     C.SetTargetInterObject(InputCursor.Main.GetSelectingInterObject());
                 else if (InputCursor.Main.CanInput && C.CanInputMoveTarget())
                     C.SetMoveTarget(TempUIControl.Main.UICamera.ScreenToWorldPoint(Input.mousePosition).x);

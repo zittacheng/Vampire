@@ -93,6 +93,7 @@
     <Compile Include="Assets\Script\ConversationControl.cs" />
     <Compile Include="Assets\Script\DestroyIOState.cs" />
     <Compile Include="Assets\Script\GhostControl.cs" />
+    <Compile Include="Assets\Script\GhostFormRenderer.cs" />
     <Compile Include="Assets\Script\InputArea.cs" />
     <Compile Include="Assets\Script\InputCursor.cs" />
     <Compile Include="Assets\Script\InterObject.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\Script\Puzzle\PuzzleControl.cs" />
     <Compile Include="Assets\Script\Puzzle\PuzzleExit.cs" />
     <Compile Include="Assets\Script\Puzzle\PuzzleHandle.cs" />
+    <Compile Include="Assets\Script\Retry.cs" />
     <Compile Include="Assets\Script\Room.cs" />
     <Compile Include="Assets\Script\RoomEntrance.cs" />
     <Compile Include="Assets\Script\SaveControl.cs" />

@@ -43,6 +43,7 @@ namespace Knight
         public bool GhostForm;
         public float GhostFormSpeed;
         public float KillDelay;
+        public bool Killing;
         [Space]
         public List<Collider2D> C2Ds;
         public List<MovingPlatform> MPs;
@@ -262,8 +263,18 @@ namespace Knight
             DelayProcessing = false;
         }
 
+        public void SetGhostForm(bool Active)
+        {
+            GhostForm = Active;
+
+            ConversationControl.Main.DisableConversaction();
+            EndMoveTarget();
+        }
+
         public void StartKill()
         {
+            DisruptInterObject();
+            Killing = true;
             StartCoroutine("KillProcess");
             AC.StartKill();
         }
@@ -277,6 +288,8 @@ namespace Knight
         public void FinishKill()
         {
             DisruptInterObject();
+            OutlinersControl.Main.ChangeBack();
+            Killing = false;
         }
 
         public void AttackInput(int Index)
@@ -410,7 +423,7 @@ namespace Knight
 
         public bool CanInputMoveTarget()
         {
-            return !DelayProcessing && (!ActiveInterObject || ActiveInterObject.CanDisrupt());
+            return !DelayProcessing && !Killing && (!ActiveInterObject || ActiveInterObject.CanDisrupt());
         }
 
         public bool CanMove(Direction D)

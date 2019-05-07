@@ -12,6 +12,7 @@ namespace Knight
         public List<int> TargetNumbers;
         public List<TextMeshProUGUI> TEXTs;
         public Vector2Int ValueLimit;
+        public bool AlreadyLoaded;
 
         public void Awake()
         {
@@ -29,6 +30,11 @@ namespace Knight
         void Update()
         {
             RenderNumbers();
+            if (SaveControl.GetFloat("GhostTime") <= 0 && !AlreadyLoaded)
+            {
+                AlreadyLoaded = true;
+                OutlinersControl.Main.ChangeLevel();
+            }
         }
 
         public void ChangeNumber(int Index, int Value)
